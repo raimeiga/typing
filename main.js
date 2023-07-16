@@ -1,4 +1,7 @@
 // js(JavaScript)ファイルは上から読み込まれる？
+/*  ブレークポイント=デベロッパーツールで一時停止させるプログラムの行のこと。
+    ブレークポイントを活用　デベロッパーツール⇒ソースを開いて、一時停止ボタンをクリック（再開はその隣のボタン） 
+    typed += untyped.substring(0, 1); をハイライトすると、打ち込み済の文字が表示されるので、プログラムの動作を確認しやすい*/
 
 // 変数の初期化
 let untyped = '';
@@ -50,7 +53,7 @@ const keyPress = e => {
 
   // 正タイプの場合cssファイルに書いた.mistypedが無効になる)
     wrap.classList.remove('mistyped');
-    //変数untyped（textListsの中のどれかの要素 例：'Hello World'）の先頭文字'H'を取得し、変数typed（この時点では、まだ無し）の末尾に追加する*/
+    //変数untyped（textListsの中のどれかの要素 例：'Hello World'）の先頭文字'H'を取得し、変数typed（この時点では、まだ無し）の末尾に追加する
      typed += untyped.substring(0, 1);  // ⇒　index.htmlでは、<span id="typed" class="typed"> H </span>*/
 
    //変数untypedに2文字目以降の文字列'ello World'を再代入する（変数untypedの先頭文字を削除する）
