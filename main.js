@@ -75,15 +75,35 @@ const keyPress = e => {
 // タイピングスキルのランクを判定
 const rankCheck = score => {
  
+// テキストを格納する変数を作る
+let text = '';
+  
+// スコアに応じて異なるメッセージを変数textに格納する
+if(score < 100) {
+  text = `あなたのランクはCです。\nBランクまであと${100 - score}文字です。`;
+} else if(score < 200) {
+  text = `あなたのランクはBです。\nAランクまであと${200 - score}文字です。`;    
+} else if(score < 300) {
+  text = `あなたのランクはAです。\nSランクまであと${300 - score}文字です。`;    
+} else if(score >= 300) {
+  text = `あなたのランクはSです。\nおめでとうございます!`;    
+}
 
-
-
-
+// 生成したメッセージと一緒に文字列を返す
+return `${score}文字打てました!\n${text}\n【OK】リトライ / 【キャンセル】終了`;
+};
 // ゲームを終了
+
 const gameOver = id => {
   clearInterval(id);
   const result = confirm(rankCheck(score));
+
+  // OKボタンをクリックされたらリロードする
+  if(result == true) {
+    window.location.reload();
+  }
 };
+
 
 // カウントダウンタイマー
 const timer = () => {
