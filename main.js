@@ -6,6 +6,7 @@
 // 変数の初期化
 let untyped = '';
 let typed = '';
+let score = 0;
 
 // 必要なHTML要素の取得
 const untypedfield = document.getElementById('untyped');
@@ -49,10 +50,10 @@ const keyPress = e => {
     return;
   }
 
-
-
   // 正タイプの場合cssファイルに書いた.mistypedが無効になる)
     wrap.classList.remove('mistyped');
+    // スコアのインクリメント(上のlet score = 0;　と　const keyPressの定数と合わせてコードを追う）
+    score++;
     //変数untyped（textListsの中のどれかの要素 例：'Hello World'）の先頭文字'H'を取得し、変数typed（この時点では、まだ無し）の末尾に追加する
      typed += untyped.substring(0, 1);  // ⇒　index.htmlでは、<span id="typed" class="typed"> H </span>*/
 
@@ -72,12 +73,16 @@ const keyPress = e => {
 };
 
 // タイピングスキルのランクを判定
-const rankCheck = score => {};
+const rankCheck = score => {
+ 
+  // スコアの値を返す
+  return `${score}文字打てました!`;
+};
+
 // ゲームを終了
 const gameOver = id => {
   clearInterval(id);
-
-  console.log('ゲーム終了!');
+  const result = confirm(rankCheck(score));
 };
 
 // カウントダウンタイマー
