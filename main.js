@@ -75,9 +75,9 @@ const keyPress = e => {
 // タイピングスキルのランクを判定
 const rankCheck = score => {
  
-  // スコアの値を返す
-  return `${score}文字打てました!`;
-};
+
+
+
 
 // ゲームを終了
 const gameOver = id => {
